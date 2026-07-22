@@ -1,0 +1,43 @@
+# Sudor Construction
+
+Marketing + lead-gen site for Sudor Construction ("Sudor Group") — two family-run
+divisions under one roof: **Electric & Tile** (Doug) and **Demo & Dumpsters** (Braiden).
+
+## Stack
+- React 18 + Vite
+- react-router-dom (real page URLs)
+- vite-react-ssg (static prerender of every route for SEO)
+- Resend serverless function for lead email routing (`/api/send-lead`)
+
+## Local dev
+```bash
+npm install
+npm run dev
+```
+
+## Build (prerenders every route to static HTML)
+```bash
+npm run build      # outputs to /dist
+npm run preview
+```
+
+## Deploy (Vercel)
+1. Import the repo in Vercel.
+2. Framework preset: **Vite**. Build: `npm run build`. Output: `dist`.
+3. Add env vars: `RESEND_API_KEY`, `LEAD_FROM`.
+4. Deploy. Point `sudorconstruction.com` DNS to Vercel.
+
+## Lead routing
+The single quote form routes by selected service:
+- Electrical / Tile / Remodel / Addition / Commercial -> **Doug** (dougsudor@yahoo.com)
+- Demolition / Dumpster / Cleanout / Junk removal / Moving -> **Braiden** (braidensudor@gmail.com)
+- Every lead CCs **colonnamedia@gmail.com**.
+
+Email sending stays inert until `RESEND_API_KEY` is set — the form still confirms
+on submit, it just doesn't send yet.
+
+## Still to confirm before launch
+- Full business street address + ZIP + hours (for schema / local SEO)
+- Real dumpster sizes & pricing (Dump Rentals page uses placeholders)
+- Real project photos (Our Work gallery)
+- Google Business Profile link, license #, exact service-area towns
