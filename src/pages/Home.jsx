@@ -148,3 +148,24 @@ export default function Home() {
             { t: 'Full gut demo', side: 'green', img: '/images/gallery/gallery-03.jpg' },
           ].map((p, i) => (
             <div className="work-tile has-img" key={i} data-side={p.side}>
+              <img className="work-img" src={p.img} alt={p.t} loading="lazy" />
+              <span className="work-tag">{p.t}</span>
+            </div>
+          ))}
+        </div>
+        <div className="center-btn"><Link to="/our-work" className="btn btn-ghost">See all our work →</Link></div>
+      </section>
+
+      <section className="family">
+        <div className="sec-head"><p className="eyebrow center">The Founders</p><h2>A father, a son, one standard.</h2></div>
+        <div className="fam-grid">
+          <FamilyCard who="doug" />
+          <FamilyCard who="braiden" />
+        </div>
+        <div className="center-btn"><Link to="/family" className="btn btn-ghost">Meet the family →</Link></div>
+      </section>
+
+      <QuoteSection preset="" />
+    </>
+  )
+}
