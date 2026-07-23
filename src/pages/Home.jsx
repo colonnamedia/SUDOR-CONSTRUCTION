@@ -14,7 +14,7 @@ export default function Home() {
         description="Family-run Pittsburgh contractor. Master electrical & luxury tile with Doug; demolition, cleanouts & dumpster rentals with Braiden. Free estimates — call 412-576-0662."
         path="/" />
 
-      <section className="hero">
+      <section className="hero hero--home">
         <div className="hero-grain" />
         <div className="hero-inner">
           <p className="eyebrow">Pittsburgh · Family Owned · 20+ Years on the Tools</p>
