@@ -50,14 +50,14 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Sudor Construction | Electrical, Tile, Demolition & Dumpster Rentals — Pittsburgh"
-        description="Family-run Pittsburgh contractor. Master electrical & luxury tile with Doug; demolition, cleanouts & dumpster rentals with Braiden. Free estimates — call 412-576-0662."
+        title="Sudor Construction | Electrical, Tile, Demolition & Dumpster Rentals - Pittsburgh"
+        description="Family-run Pittsburgh contractor. Master electrical and luxury tile with Doug; demolition, cleanouts and dumpster rentals with Braiden. Free estimates - call 412-576-0662."
         path="/" />
 
       <section className="hero hero--home hero-showcase">
         <div className="hero-grain" />
         <div className="hero-inner hero-showcase-inner">
-          <p className="eyebrow hero-kicker">Pittsburgh · Family Owned · 20+ Years on the Tools</p>
+          <p className="eyebrow hero-kicker">Pittsburgh - Family Owned - 20+ Years on the Tools</p>
           <h1 className="hero-title">
             <span>ONE NAME.</span>
             <span className="g">TWO CREWS.</span>
@@ -88,8 +88,8 @@ export default function Home() {
           </div>
 
           <div className="hero-phones">
-            <a href="tel:+14125760662"><PhoneIcon /> Doug · 412-576-0662</a>
-            <a href="tel:+14126186004"><PhoneIcon /> Braiden · 412-618-6004</a>
+            <a href="tel:+14125760662"><PhoneIcon /> Doug - 412-576-0662</a>
+            <a href="tel:+14126186004"><PhoneIcon /> Braiden - 412-618-6004</a>
           </div>
         </div>
       </section>
@@ -104,9 +104,9 @@ export default function Home() {
 
       <section className="divisions">
         <div className="sec-head">
-          <p className="eyebrow center">One website · Two companies</p>
+          <p className="eyebrow center">One website - Two companies</p>
           <h2>Pick your crew.</h2>
-          <p className="sec-lead">Every job runs through the person who actually does the work — no call centers, no runaround.</p>
+          <p className="sec-lead">Every job runs through the person who actually does the work - no call centers, no runaround.</p>
         </div>
         <div className="div-grid">
           <div className="div-card doug">
@@ -128,7 +128,7 @@ export default function Home() {
             <h3>Demo &amp; Dumpsters</h3>
             <p className="div-owner">Run by Braiden Sudor</p>
             <ul>
-              <li>Demolition — done clean</li>
+              <li>Demolition - done clean</li>
               <li>Dump-trailer &amp; steel dumpster rentals</li>
               <li>Cleanouts</li>
               <li>Junk removal</li>
@@ -148,3 +148,24 @@ export default function Home() {
             { t: 'Full gut demo', side: 'green', img: '/images/gallery/gallery-03.jpg' },
           ].map((p, i) => (
             <div className="work-tile has-img" key={i} data-side={p.side}>
+              <img className="work-img" src={p.img} alt={p.t} loading="lazy" />
+              <span className="work-tag">{p.t}</span>
+            </div>
+          ))}
+        </div>
+        <div className="center-btn"><Link to="/our-work" className="btn btn-ghost">See all our work</Link></div>
+      </section>
+
+      <section className="family">
+        <div className="sec-head"><p className="eyebrow center">The Founders</p><h2>A father, a son, one standard.</h2></div>
+        <div className="fam-grid">
+          <FamilyCard who="doug" />
+          <FamilyCard who="braiden" />
+        </div>
+        <div className="center-btn"><Link to="/family" className="btn btn-ghost">Meet the family</Link></div>
+      </section>
+
+      <QuoteSection preset="" />
+    </>
+  )
+}
